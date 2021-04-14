@@ -1,0 +1,19 @@
+.skill-card {
+  border-radius: 10px;
+  border: 1px solid lightblue;
+}
+
+.skill-card:hover {
+  z-index: 1;
+  transform: scale(1.04);
+  transition: 1.5s;
+}
+
+.icon {
+  height: 50px;
+  width: 50px;
+}
+
+.name {
+  color: #f47629;
+}

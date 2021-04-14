@@ -1,0 +1,20 @@
+.title {
+  font-family: ui-serif;
+  font-weight: 800;
+  font-size: 30px;
+  color: #f47629;
+}
+
+.nav-items {
+  font-weight: 500;
+}
+
+.nav-items:hover {
+  background-color: rgb(160, 210, 255);
+  transition: 1.2s;
+}
+
+.btn-brand {
+  background-color: #f47629;
+  font-weight: 600;
+}
