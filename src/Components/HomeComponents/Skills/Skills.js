@@ -59,7 +59,7 @@ const Skills = () => {
     return (
         <section className="mt-5 pt-5">
             <Container>
-                <h3 className="text-center title">WHY CHOOSE US</h3>
+                <h3 className="text-center section-title">WHY CHOOSE US</h3>
                 <p className="text-center text-muted">There are many valid reasons why you should choose us to take care of your valuable device</p>
                     <Row className="mt-5">
                         {
