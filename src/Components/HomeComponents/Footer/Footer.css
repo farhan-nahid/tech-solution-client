@@ -1,0 +1,26 @@
+.copy-right a {
+  text-decoration: none;
+  color: coral;
+  cursor: pointer;
+  font-weight: 700;
+}
+
+.copy-right a:hover {
+  color: green;
+  transition: 1.5s;
+}
+
+.social-media .icon {
+  height: 40px;
+  width: 40px;
+  color: #f47629;
+  border-radius: 50%;
+  border: 1px solid #f47629;
+  padding: 10px;
+}
+
+.social-media .icon:hover {
+  background-color: #6acece;
+  color: white;
+  transition: 0.8s;
+}
