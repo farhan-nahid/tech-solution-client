@@ -1,6 +1,6 @@
 import React from 'react';
 import { Button, Col, Container, Row } from 'react-bootstrap';
-import repair from '../../../img/mobile.jpg';
+import repair from '../../../img/mobile.png';
 import './HomeBanner.css';
 
 const HomeBanner = () => {

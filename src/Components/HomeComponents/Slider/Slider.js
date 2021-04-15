@@ -2,11 +2,11 @@ import React from 'react';
 import { Container } from 'react-bootstrap';
 import Carousel from 'react-multi-carousel';
 import 'react-multi-carousel/lib/styles.css';
-import slider1 from '../../../img/slider1.jpg';
-import slider2 from '../../../img/slider2.jpg';
-import slider3 from '../../../img/slider3.jpg';
-import slider4 from '../../../img/slider4.jpg';
-import slider5 from '../../../img/slider5.jpg';
+import slider1 from '../../../img/slider1.png';
+import slider2 from '../../../img/slider2.png';
+import slider3 from '../../../img/slider3.png';
+import slider4 from '../../../img/slider4.png';
+import slider5 from '../../../img/slider5.png';
 import './Slider.css';
 
 const Slider = () => {
@@ -33,7 +33,7 @@ const Slider = () => {
       };
       
     return (
-        <div className='slider-container'>
+        <div className='slider-container  pb-5 pt-5'>
         <Container>
             <div className="mb-5">
                 <h3 className='text-center section-title'> Here are some of our works </h3>
