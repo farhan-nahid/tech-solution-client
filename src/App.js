@@ -7,8 +7,9 @@ import {
 import AddAdmin from "./Components/DashBoardComponents/AddAdmin/AddAdmin";
 import AddServices from "./Components/DashBoardComponents/AddServices/AddServices";
 import DashBoard from "./Components/DashBoardComponents/DashBoard/DashBoard";
+import Order from "./Components/DashBoardComponents/Order/Order";
 import Home from "./Components/HomeComponents/Home/Home";
-//import PrivateRoute from './Components/LoginComponents//PrivateRoute/PrivateRoute';
+import PrivateRoute from './Components/LoginComponents//PrivateRoute/PrivateRoute';
 import Login from "./Components/LoginComponents/Login/Login";
 import NotFound from "./Components/NotFound/NotFound";
 
@@ -27,15 +28,18 @@ function App() {
           <Route path="/login">
             <Login />
           </Route>
-          <Route exact path="/dashboard">
+          <PrivateRoute exact path="/dashboard">
             <DashBoard />
-          </Route>
-          <Route path="/dashboard/addServices">
+          </PrivateRoute>
+          <PrivateRoute path="/dashboard/addServices">
             <AddServices />
-          </Route>
-          <Route path="/dashboard/addAdmin">
+          </PrivateRoute>
+          <PrivateRoute path="/dashboard/addAdmin">
             <AddAdmin />
-          </Route>
+          </PrivateRoute>
+          <PrivateRoute path="/dashboard/order/:id">
+            <Order />
+          </PrivateRoute>
           <Route exact path="/">
           <Home />
           </Route>

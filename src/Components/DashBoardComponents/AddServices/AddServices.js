@@ -1,8 +1,11 @@
-import React, { useState } from 'react';
+import React, { useContext, useState } from 'react';
 import { Button, Col, Form } from 'react-bootstrap';
+import { UserContext } from '../../../App';
 import SideBar from '../SideBar/SideBar';
 
 const AddServices = () => {
+
+    const [loggedInUser, setLoggedInUser] = useContext(UserContext)
     const [info, setInfo] = useState({})
     const [file, setFile] = useState(null)
 
@@ -45,9 +48,13 @@ const AddServices = () => {
                  <SideBar />
             </Col>
         <Col md={10} className=" bg-light" style={{ position: "absolute", right: 0 }}>
-            <h5 className="name">Add a Service</h5>
-                <Form className="mt-5" onSubmit={handleSubmit}>
-                    
+            
+            <div className="d-flex justify-content-between pt-5 name">
+                <h3>Add a Service</h3>
+                 <h5>{loggedInUser.name}</h5>
+            </div>
+            
+                <Form className="mt-5 pt-5" onSubmit={handleSubmit}>      
                     <Form.Group controlId="formBasicName">
                         <Form.Control onBlur={handleBlur} type="text" name='name' placeholder="Enter Service Name*" required/>
                     </Form.Group>

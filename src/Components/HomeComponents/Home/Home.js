@@ -6,6 +6,7 @@ import Partners from '../Partners/Partners';
 import Services from '../Services/Services';
 import Skills from '../Skills/Skills';
 import Slider from '../Slider/Slider';
+import './Home.css';
 
 const Home = () => {
     return (

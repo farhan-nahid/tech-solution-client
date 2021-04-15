@@ -1,9 +1,11 @@
-import React from 'react';
+import React, { useContext } from 'react';
 import { Col, Row } from 'react-bootstrap';
 import { useForm } from "react-hook-form";
+import { UserContext } from '../../../App';
 import SideBar from '../SideBar/SideBar';
 
 const AddAdmin = (e) => {
+    const [loggedInUser, setLoggedInUser] = useContext(UserContext)
     const { register, handleSubmit,  formState: { errors } } = useForm();
     const onSubmit = data => {
         console.log(data)
@@ -24,14 +26,17 @@ const AddAdmin = (e) => {
 
 
     return (
-        <section>
+        <section className>
             <Row>
                 <Col md={2}>
                     <SideBar />
                 </Col>
                 <Col md={10} className=" bg-light" style={{ position: "absolute", right: 0 }}>
-                <h5 className="name">Add more Admin</h5>
-                    <form onSubmit={handleSubmit(onSubmit)} className="mt-5 ">
+                    <div className=" d-flex justify-content-between pt-5 name">
+                        <h3>Add more Admin</h3>
+                        <h5>{loggedInUser.name}</h5>
+                    </div>
+                    <form onSubmit={handleSubmit(onSubmit)} className="mt-5  pt-5">
                         <input {...register("exampleRequired", { required: true })} type="email" placeholder="Enter Admin Email" style={{width:'350px'}} />
                         {errors.exampleRequired && <span>This field is required</span>}
                         <input type="submit" className=" btn btn-brand"  value="Add Admin" />
