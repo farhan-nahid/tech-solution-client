@@ -5,9 +5,8 @@ import SideBar from '../SideBar/SideBar';
 const AddServices = () => {
     const [info, setInfo] = useState({})
     const [file, setFile] = useState(null)
-    console.log(info);
-    console.log(file);
 
+    
     const handleBlur = e =>{
         const newInfo = {...info}
         newInfo[e.target.name]= e.target.value
