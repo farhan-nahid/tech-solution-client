@@ -1,5 +1,5 @@
 .sidebar {
-  background-image: linear-gradient(40deg, #f9ba08, #cc5f2d);
+  background-image: linear-gradient(40deg, #f59607d1, #648c5a);
   position: fixed;
 }
 
@@ -10,6 +10,10 @@
 .sidebar li:hover span {
   display: inline-block;
   transform: translate(5px);
+}
+
+.sidebar li:active {
+  background: chartreuse;
 }
 
 .sidebar svg {

@@ -54,7 +54,7 @@ const AddServices = () => {
                  <h5>{loggedInUser.name}</h5>
             </div>
             
-                <Form className="mt-5 pt-5" onSubmit={handleSubmit}>      
+                <Form className="mt-5 pt-5 pb-5" onSubmit={handleSubmit}>      
                     <Form.Group controlId="formBasicName">
                         <Form.Control onBlur={handleBlur} type="text" name='name' placeholder="Enter Service Name*" required/>
                     </Form.Group>

@@ -9,7 +9,7 @@ import './NavBar.css';
 const NavBar = () => {
 
   const [loggedInUser, setLoggedInUser, ] = useContext(UserContext);
-  const { img ,name} = loggedInUser;
+  const { email ,name, img} = loggedInUser;
   const [show, setShow] = useState(false);
   const [target, setTarget] = useState(null);
   const ref = useRef(null);
@@ -35,58 +35,60 @@ const NavBar = () => {
 
     return (
         <Navbar expand="lg">
-        <Navbar.Brand as={Link} to="/"> <span className="title"> Tech Solution</span> </Navbar.Brand>
-        <Navbar.Toggle aria-controls="basic-navbar-nav" />
-        <Navbar.Collapse id="basic-navbar-nav">
-          <Nav className="ml-auto text-center">
-            <Nav.Link  as={Link} to="/home"  className="mr-3 nav-items">Home</Nav.Link>
-            <Nav.Link  as={Link} to="/about"  className="mr-3 nav-items">About</Nav.Link>
-            <Nav.Link  as={Link} to="/services"  className="mr-3 nav-items">Services</Nav.Link>
-            <Nav.Link  as={Link} to="/Dashboard"  className="mr-3 nav-items">Dashboard</Nav.Link>
-            <Nav.Link  as={Link} to="/contact"  className="mr-3 nav-items">Contact</Nav.Link>
-            {
-
-                loggedInUser.name|| loggedInUser.email ? 
-                <div ref={ref}>
+          <div className="container">
+          <Navbar.Brand as={Link} to="/"> <span className="title"> Tech Solution</span> </Navbar.Brand>
+            <Navbar.Toggle aria-controls="basic-navbar-nav" />
+            <Navbar.Collapse id="basic-navbar-nav">
+              <Nav className="ml-auto text-center">
+                <Nav.Link  as={Link} to="/home"  className="mr-3 nav-items">Home</Nav.Link>
+                <Nav.Link  as={Link} to="/about"  className="mr-3 nav-items">About</Nav.Link>
+                <Nav.Link  as={Link} to="/services"  className="mr-3 nav-items">Services</Nav.Link>
+                <Nav.Link  as={Link} to="/Dashboard"  className="mr-3 nav-items">Dashboard</Nav.Link>
+                <Nav.Link  as={Link} to="/contact"  className="mr-3 nav-items">Contact</Nav.Link>
                 {
 
-                    loggedInUser.img ?
-                    <img src= {img} alt =".." ref={target} style={{ height:"30px", width:"30px", borderRadius:"50%"}} onClick={handleClick}/>
+                      loggedInUser.name|| loggedInUser.email ? 
+                      <div ref={ref}>
+                    {
 
-                    :<img src= {userImage} alt =".." ref={target} style={{ height:"30px", width:"30px", borderRadius:"50%"}} onClick={handleClick}/>
-                    
-                }
-
-                <Overlay
-                  show={show}
-                  target={target}
-                  placement="bottom"
-                  container={ref.current}
-                  containerPadding={20}
-                >
-                  <Popover id="popover-contained"  className="text-center" >
-                  {
-
-                        loggedInUser.img ?
-                        <img style={{borderRadius:"50%", height:"60px", width:"60px"}} src={img} alt=""/> 
-                        
-                        :<img style={{borderRadius:"50%", height:"60px", width:"60px"}} src={userImage} alt=""/> 
+                      loggedInUser ? 
+                        <img src= {img} alt =".." ref={target} style={{ height:"30px", width:"30px", borderRadius:"50%"}} onClick={handleClick}/> 
+                        :
+                        <img src= {userImage} alt =".." ref={target} style={{ height:"30px", width:"30px", borderRadius:"50%"}} onClick={handleClick}/>
                         
                     }
-                    <Popover.Content>
-                      <h6>{name}</h6>
-                      <Button variant="info"  onClick={handelSignOut}> Log Out</Button>
-                    </Popover.Content>
-                  </Popover>
-                </Overlay>
-                </div>
+                          <Overlay
+                            show={show}
+                            target={target}
+                            placement="bottom"
+                            container={ref.current}
+                            containerPadding={20}
+                          >
+                        <Popover id="popover-contained"  className="text-center" >
+                    { 
 
-                :   <Button as={Link} to="/login" variant="danger" className="btn-brand mr-3">Login</Button>
+                      loggedInUser ?
+                      <img style={{borderRadius:"50%", height:"60px", width:"60px"}} src={img} alt="..."/> 
+                        :
+                        <img style={{borderRadius:"50%", height:"60px", width:"60px"}} src={userImage} alt="..."/> 
+                        
+                    }
+                          <Popover.Content>
+                            <h6>{name}</h6>
+                            <p>{email}</p>
+                            <Button variant="info"  onClick={handelSignOut}> Log Out</Button>
+                          </Popover.Content>
+                        </Popover>
+                      </Overlay>
+                      </div>
+                      : 
+                      <Button as={Link} to="/login" variant="danger" className="btn-brand mr-3">Login</Button>
 
-                }
-           
-          </Nav>  
-        </Navbar.Collapse>
+                 }
+              
+              </Nav>  
+            </Navbar.Collapse>
+          </div>
       </Navbar>
     );
 };

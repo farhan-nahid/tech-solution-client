@@ -36,7 +36,7 @@ const AddAdmin = (e) => {
                         <h3>Add more Admin</h3>
                         <h5>{loggedInUser.name}</h5>
                     </div>
-                    <form onSubmit={handleSubmit(onSubmit)} className="mt-5  pt-5">
+                    <form onSubmit={handleSubmit(onSubmit)} className="mt-5  pt-5 pb-5">
                         <input {...register("email", { required: true })} type="email"  placeholder="Enter Admin Email" style={{width:'350px'}} />
                         {errors.email && <span>This field is required</span>}
                         <input type="submit" className=" btn btn-brand"  value="Add Admin" />

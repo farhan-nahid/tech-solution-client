@@ -46,13 +46,13 @@ const Footer = () => {
                 
                     <div className="d-flex justify-content-between mt-5">
                         <div className="copy-right">
-                        <p>{(new Date()).getFullYear()} &copy; by <a  href="//facebook.com/farhan.nahid.01" target="_blank">  Farhan Ahmed Nahid </a> . All Rights Reserved.</p>
+                        <p>{(new Date()).getFullYear()} &copy; by <a  href="//facebook.com/farhan.nahid.01" target="-blank">  Farhan Ahmed Nahid </a> . All Rights Reserved.</p>
                         </div>
                     
                     <div className="social-media">
                     <ul className="list-inline">
-                            <li className="list-inline-item" ><a href="//facebook.com/farhan.nahid.01" target="_blank"><FontAwesomeIcon className="icon active-icon" icon={faFacebookF} /></a></li>
-                            <li className="list-inline-item" target="_blank"><a href="mailto:nahidahmed9933@gmail.com" target="_blank"><FontAwesomeIcon className="icon" icon={faGooglePlusG} /></a></li>
+                            <li className="list-inline-item" ><a href="//facebook.com/farhan.nahid.01" target="-blank"><FontAwesomeIcon className="icon active-icon" icon={faFacebookF} /></a></li>
+                            <li className="list-inline-item" target="_blank"><a href="mailto:nahidahmed9933@gmail.com" target="-blank"><FontAwesomeIcon className="icon" icon={faGooglePlusG} /></a></li>
                         </ul>
                     </div>
                     </div>
