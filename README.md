@@ -41,4 +41,4 @@
 
 
 
-You can see server side code in [Bismillah-Mobile-Zone-server](https://github.com/Porgramming-Hero-web-course/complete-website-server-farhan-nahid)
+You can see server side code in [Tech-Solution-Server](https://github.com/Porgramming-Hero-web-course/complete-website-server-farhan-nahid)
