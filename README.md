@@ -11,7 +11,7 @@
 - Admin can add more admin
 - Admin can delete services
 - Admin can see all order
-- Admin can change the order contion
+- Admin can change the order condition
 - Website has a our work slider(Added as bonus section)
 - Navbar(when a user & admin Login in this website he see his photoURL in navbar. When he Click this photo he see his photoURL, name, email & logout button)
 - Responsive
