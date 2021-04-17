@@ -17,7 +17,7 @@ const Review = () => {
            description:data.description,
 
         }
-        const url='http://localhost:5000/addReview'
+        const url='https://tech-solution-farhan.herokuapp.com/addReview'
         fetch(url,{
         method: 'POST',
         headers:{

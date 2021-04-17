@@ -12,7 +12,7 @@ const UserShowOrder = () => {
 
      
      useEffect(()=>{
-         fetch('http://localhost:5000/order?email='+loggedInUser.email,{
+         fetch('https://tech-solution-farhan.herokuapp.com/order?email='+loggedInUser.email,{
             headers:{
                 'Content-Type':'Application/json'
             },

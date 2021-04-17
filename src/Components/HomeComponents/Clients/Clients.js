@@ -8,7 +8,7 @@ const Clients = () => {
     const [clientReview, srtClientReview] = useState([])
   
 useEffect(()=>{
-    fetch('http://localhost:5000/review',{
+    fetch('https://tech-solution-farhan.herokuapp.com/review',{
         headers:{
             'Content-Type':'Application/json'
         },

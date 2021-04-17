@@ -29,7 +29,7 @@ const AddServices = () => {
         formData.append('price', info.price)
         formData.append('myFile', file)
       
-        fetch('http://localhost:5000/addAService', {
+        fetch('https://tech-solution-farhan.herokuapp.com/addAService', {
           method: 'POST',
           body: formData
         })

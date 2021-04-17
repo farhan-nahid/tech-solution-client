@@ -12,7 +12,7 @@ const AddAdmin = (e) => {
         const admin = {
            email:data.email,
         }
-        const url='http://localhost:5000/addAdmin'
+        const url='https://tech-solution-farhan.herokuapp.com/addAdmin'
         fetch(url,{
         method: 'POST',
         headers:{
