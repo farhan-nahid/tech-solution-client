@@ -21,7 +21,8 @@ const AddServices = () => {
         setFile(newFile)
     }
 
- const handleSubmit = () =>{
+ const handleSubmit = (e) =>{
+     e.preventDefault()
         const formData = new FormData()
         
         formData.append('name', info.name)
@@ -36,6 +37,7 @@ const AddServices = () => {
         .then(response => response.json())
         .then(data => {
           console.log(data)
+          window.alert("New Service Added")
         })
         .catch(error => {
           console.error(error)

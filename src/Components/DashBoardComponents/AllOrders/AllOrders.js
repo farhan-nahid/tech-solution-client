@@ -27,10 +27,11 @@ useEffect(()=>{
                     <table className="table table-borderless">
                         <thead>
                             <tr>
-                            <th className="text-secondary" scope="col">Order Name</th>
-                            <th className="text-secondary" scope="col">email</th>
-                            <th className="text-secondary" scope="col">Price</th>
-                            <th className="text-secondary" scope="col">Action</th>
+                                <th className="text-secondary" scope="col">Name</th>
+                                <th className="text-secondary" scope="col">Email Address</th>
+                                <th className="text-secondary" scope="col">Service Name</th>
+                                <th className="text-secondary" scope="col">Price</th>
+                                <th className="text-secondary" scope="col">Action</th>
                             </tr>
                         </thead>
                             {
