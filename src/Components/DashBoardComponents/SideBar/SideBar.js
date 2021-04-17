@@ -11,8 +11,7 @@ const SideBar = () => {
 
     const [loggedInUser, setLoggedInUser, ] = useContext(UserContext);
     const[isAdmin, setIsAdmin] = useState(false)
-    console.log(isAdmin);
-    console.log(loggedInUser.email);
+    
 
     useEffect(()=>{
         fetch('http://localhost:5000/isAdmin',{
@@ -23,7 +22,6 @@ const SideBar = () => {
         .then(res => res.json())
         .then(data=>setIsAdmin(data))
     },[loggedInUser])
-//console.log(isAdmin);
 
 
     const handelSignOut= () => {
@@ -58,7 +56,7 @@ const SideBar = () => {
                         </Link>
                     </li>
                     <li>
-                        <Link to="/dashboard/order" className="text-white">
+                        <Link to="/dashboard/userOrder" className="text-white">
                             <FontAwesomeIcon icon={faShoppingBag} /> <span>Order List</span>
                         </Link>
                     </li>

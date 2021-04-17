@@ -1,14 +1,15 @@
 import React from 'react';
-import { Card, Col } from 'react-bootstrap';
+import { Col } from 'react-bootstrap';
 
-const SingleClient = ({client}) => {
-    const {name, description} = client
+const SingleClient = ({review}) => {
+    const {name, description, companyName} = review
     return (
         <Col md={4} className="p-2">
-            <Card className="text-center p-4 ">
+            <div className="text-center review p-4 ">  
+                <h5>{name}</h5>
+                <h6>{companyName}</h6>
                 <p>{description}</p>
-                <h6>{name}</h6>
-            </Card>
+            </div>
         </Col>
     );
 };

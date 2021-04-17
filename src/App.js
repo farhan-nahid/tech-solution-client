@@ -6,8 +6,11 @@ import {
 } from "react-router-dom";
 import AddAdmin from "./Components/DashBoardComponents/AddAdmin/AddAdmin";
 import AddServices from "./Components/DashBoardComponents/AddServices/AddServices";
+import AllOrders from "./Components/DashBoardComponents/AllOrders/AllOrders";
 import DashBoard from "./Components/DashBoardComponents/DashBoard/DashBoard";
 import Order from "./Components/DashBoardComponents/Order/Order";
+import Review from "./Components/DashBoardComponents/Review/Review";
+import UserShowOrder from "./Components/DashBoardComponents/UserShowOrder/UserShowOrder";
 import Home from "./Components/HomeComponents/Home/Home";
 import PrivateRoute from './Components/LoginComponents//PrivateRoute/PrivateRoute';
 import Login from "./Components/LoginComponents/Login/Login";
@@ -39,6 +42,15 @@ function App() {
           </PrivateRoute>
           <PrivateRoute path="/dashboard/order/:id">
             <Order />
+          </PrivateRoute>
+          <PrivateRoute path="/dashboard/allOrders">
+            <AllOrders />
+          </PrivateRoute>
+          <PrivateRoute path="/dashboard/userOrder">
+            <UserShowOrder />
+          </PrivateRoute>
+          <PrivateRoute path="/dashboard/review">
+            <Review />
           </PrivateRoute>
           <Route exact path="/">
           <Home />

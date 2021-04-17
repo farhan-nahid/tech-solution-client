@@ -1,0 +1,9 @@
+.order-card {
+  border-radius: 10px;
+  border: 1px solid lightblue;
+}
+
+.order-card:hover {
+  border: 1px solid black;
+  cursor: pointer;
+}

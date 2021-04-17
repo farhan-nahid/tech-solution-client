@@ -2,7 +2,6 @@ import React, { useContext, useEffect, useState } from 'react';
 import { Button, Col, Form } from 'react-bootstrap';
 import { useParams } from 'react-router';
 import { UserContext } from '../../../App';
-import ProcessPayment from '../ProcessPayment/ProcessPayment';
 import SideBar from '../SideBar/SideBar';
 
 
@@ -14,7 +13,7 @@ const Order = () => {
   const [loggedInUser, setLoggedInUser] = useContext(UserContext)
 
   const {name, price} =orderCheckout;
-
+console.log(order)
     useEffect(()=>{
         const url= `http://localhost:5000/services/${id}`
         fetch(url)
@@ -23,6 +22,7 @@ const Order = () => {
     },[id])
 
     const handleOrderCheckout = (e) => {
+        e.preventDefault()
         const newOrder = {...loggedInUser, ...order}
         delete newOrder._id
         delete newOrder.image
@@ -55,21 +55,20 @@ const Order = () => {
                         <h3>Orders</h3>
                         <h5>{loggedInUser.name}</h5>
                     </div>
-                  <Form className="mt-5 pt-5">
+                  <Form className="mt-5 pt-5" onSubmit={handleOrderCheckout} >
                         <Form.Group controlId="formBasicName">
-                            <Form.Control onBlur={handleInputBlur} value={loggedInUser.name} type="text" name='name' placeholder="Enter Your Name*" required/>
+                            <Form.Control onBlur={handleInputBlur} value={loggedInUser.name} type="text" name='name'  placeholder="Enter Your Name*" required/>
                         </Form.Group>
                         <Form.Group controlId="formBasicEmail">
-                            <Form.Control onBlur={handleInputBlur} value={loggedInUser.email} name='name' placeholder="Enter Your Email*" required/>
+                            <Form.Control onBlur={handleInputBlur} value={loggedInUser.email} name='email' placeholder="Enter Your Email*" required/>
                         </Form.Group>
                         <Form.Group controlId="formBasicService">
-                            <Form.Control onBlur={handleInputBlur} value={name} type="text" name='name' placeholder="Enter Service Name*" required/>
+                            <Form.Control onBlur={handleInputBlur} value={name} type="text" name='service' placeholder="Enter Service Name*" required/>
                         </Form.Group>
                         <Form.Group controlId="formBasicPrice">
                             <Form.Control onBlur={handleInputBlur} value={price} type="number" name='price' placeholder="Enter Service Charge*" required/>
                         </Form.Group>
-                        <ProcessPayment />
-                        <Button  onClick={handleOrderCheckout} variant="danger" className="mt-3 float-right btn-brand">Pay Now</Button>
+                        <Button  type='submit' variant="danger" className="mt-3 float-right btn-brand">Pay Now</Button>
                     </Form>        
             </Col>
         </section>

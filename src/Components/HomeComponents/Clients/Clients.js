@@ -1,31 +1,23 @@
-import React from 'react';
+import React, { useEffect, useState } from 'react';
 import { Container, Row } from 'react-bootstrap';
+import spinner from '../../../img/loader.gif';
 import SingleClient from '../SingleClient/SingleClient';
 
 
-const clientsData = [
-    {
-        id:1,
-        name:'Mark Hanry',
-        description:"we've been using your company and from the very beginning found him and his team to be extremely professional and knowledgeable. We wouldn't have any hesitation in recommending their services",
-
-    },
-    {
-        id:2,
-        name:'Billie M Boyce',
-        description:"we've been using your company and from the very beginning found him and his team to be extremely professional and knowledgeable. We wouldn't have any hesitation in recommending their services",
-
-    },
-    {
-        id:3,
-        name:'Tonya R Sherrod',
-        description:"we've been using your company and from the very beginning found him and his team to be extremely professional and knowledgeable. We wouldn't have any hesitation in recommending their services"
-
-    },
-]
-
-
 const Clients = () => {
+    const [clientReview, srtClientReview] = useState([])
+  
+useEffect(()=>{
+    fetch('http://localhost:5000/review',{
+        headers:{
+            'Content-Type':'Application/json'
+        },
+        body:JSON.stringify()
+        })
+    .then(res => res.json())
+    .then(data => srtClientReview(data))
+},[])
+
     return (
         <section className="mt-5 pt-5">
             <Container>
@@ -33,7 +25,10 @@ const Clients = () => {
                 <p  className="text-muted text-center"> There are are some clients who take's our service & give us reviews</p>
                     <Row className="mt-5">
                         {
-                            clientsData.map(client=> <SingleClient key={client.id} client={client} />)
+                            clientReview.length > 0 ?
+                            clientReview.map(review=> <SingleClient key={review.id} review={review} />)
+                            :
+                            <img style={{width:'30%'}} className="text-center m-auto" src={spinner} alt="..."/>  
                         }
                     </Row>
             </Container>
