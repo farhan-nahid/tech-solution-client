@@ -5,7 +5,7 @@ import { useParams } from 'react-router';
 import { UserContext } from '../../../App';
 import ProcessPayment from '../ProcessPayment/ProcessPayment';
 import SideBar from '../SideBar/SideBar';
-import './Order';
+import './Order.css';
 
 
 const Order = () => {
@@ -17,7 +17,6 @@ const Order = () => {
   const [order, setOrder]= useState(null)
   const [loggedInUser, setLoggedInUser] = useContext(UserContext)
 
-  const {name, price} =orderCheckout;
     useEffect(()=>{
         const url= `https://tech-solution-farhan.herokuapp.com/services/${id}`
         fetch(url)
@@ -63,19 +62,19 @@ const Order = () => {
                         
                          <label htmlFor="" >Your Name</label> <br/>
                         <input {...register("userName", { required: true })} value={loggedInUser.name} Placeholder="Enter Your Name" className="form-control"  />  <br/>
-                        {errors.userName && <span>This field is required</span>} 
+                        {errors.userName && <span className>This field is required</span>} 
 
                         <label htmlFor="" >Your Email</label> <br/>
                         <input {...register("email", { required: true })}  value={loggedInUser.email} className="form-control" /> <br/>
-                        {errors.email && <span>This field is required</span>} 
+                        {errors.email && <span className="text-danger">This field is required</span>} 
 
                         <label htmlFor="" >Your Service Name</label> <br/>
-                        <input {...register("service", { required: true })}  value={name} className="form-control"  /> <br/>
-                        {errors.service && <span>This field is required</span>} 
+                        <input {...register("service", { required: true })} className="form-control" placeholder="Enter Service Name"  /> <br/>
+                        {errors.service && <span className="text-danger">Enter Service Name</span>} 
 
-                        <label htmlFor="" >Service Price </label> <br/>
-                        <input {...register("price", { required: true })}  value={price} className="form-control"  /> <br/>
-                        {errors.price && <span>This field is required</span>}
+                        <label htmlFor="" >Your Location </label> <br/>
+                        <input {...register("location", { required: true })} className="form-control" placeholder="Enter Your Location"  /> <br/>
+                        {errors.location && <span className="text-danger">Enter Your Location</span>}
                         
                         <input type="submit" value="Pay us" className="btn btn-danger btn-brand" />
                     </form>
