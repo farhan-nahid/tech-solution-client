@@ -19,7 +19,7 @@ const ManageServices = () => {
           .then(data => setServices(data))
       },[])
     return (
-        <div>
+        <section>
             <Row>
                 <Col md={2}>
                     <SideBar />
@@ -33,7 +33,7 @@ const ManageServices = () => {
                         }
                 </Col>
             </Row>
-        </div>
+        </section>
     );
 };
 

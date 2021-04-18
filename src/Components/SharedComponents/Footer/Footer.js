@@ -42,7 +42,7 @@ const Footer = () => {
                     </Form>
                     </Col>
                 </Row>
-                        <div className="copy-right">
+                        <div className="copy-right text-center mt-3">
                             <p>{(new Date()).getFullYear()} &copy; by <a  href="//facebook.com/farhan.nahid.01" target="-blank">  Farhan Ahmed Nahid </a> . All Rights Reserved.</p>
                         </div>    
             </Container>
