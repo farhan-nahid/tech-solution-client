@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from 'react';
 import { Col, Row } from 'react-bootstrap';
 import spinner from '../../../img/loader.gif';
+import AdminSingleOrder from '../AdminSingleOrder/AdminSingleOrder';
 import SideBar from '../SideBar/SideBar';
 
 const AllOrders = () => {
@@ -23,7 +24,7 @@ useEffect(()=>{
                 <SideBar />
              </Col>
              <Col md={10}>
-                    <table className="table table-borderless">
+                    <table className="table">
                         <thead>
                             <tr>
                                 <th className="text-secondary" scope="col">Sl No</th>
@@ -33,19 +34,15 @@ useEffect(()=>{
                                 <th className="text-secondary" scope="col">Action</th>
                             </tr>
                         </thead>
-                            {
+                        <tbody>
+                        {
                                 Orders.length > 0 ?
-                                Orders.map((order, index) =>
-                                   <tr>
-                                       <td>{index + 1}</td>
-                                        <td>{order.userName}</td>
-                                        <td>{order.email}</td>
-                                        <td>{order.service}</td>
-                                        <td> pending</td>
-                                 </tr>  )
+                                Orders.map((order, index) => <AdminSingleOrder order={order} index={index}/>)
+                                  
                                 :
                                 <img style={{width:'30%'}} className="text-center m-auto" src={spinner} alt="..."/>  
                             }
+                            </tbody>
                     </table>
                 </Col>
           </Row>

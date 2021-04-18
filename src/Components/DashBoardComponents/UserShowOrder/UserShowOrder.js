@@ -9,7 +9,7 @@ const UserShowOrder = () => {
 
     const [orders, setOrders] = useState([]);
      const [loggedInUser, setLoggedInUser] = useContext(UserContext)
-
+    
      
      useEffect(()=>{
          fetch('https://tech-solution-farhan.herokuapp.com/order?email='+loggedInUser.email,{
@@ -25,24 +25,23 @@ const UserShowOrder = () => {
      console.log(orders)
     return (
         <section className="row">
-        <Col md={2}>
-             <SideBar />
-        </Col>
-    <Col md={10} className=" bg-light" style={{ position: "absolute", right: 0 }}>
-        
-        <div className="d-flex justify-content-between pt-5 name">
-            <h3>Your Order Summery</h3>
-             <h5>{loggedInUser.name}</h5>
-        </div>
+            <Col md={2}>
+                <SideBar />
+            </Col>
+            <Col md={10} className=" bg-light" style={{ position: "absolute", right: 0 }}>  
+                <div className="d-flex justify-content-between pt-5 name">
+                    <h3>Your Order Summery</h3>
+                    <h5>{loggedInUser.name}</h5>
+                </div>
                     <Row className="mt-3 pt-5">
                         {
                             orders.length > 0 ?
-                              orders.map(order => <UserSingleOrder key={order._id}  order={order} />)
-                              :
-                              <img style={{width:'30%'}} className="text-center m-auto" src={spinner} alt="..."/>  
+                            orders.map(order => <UserSingleOrder key={order._id}  order={order} />)
+                            :
+                            <img style={{width:'30%'}} className="text-center m-auto" src={spinner} alt="..."/>  
                         }
                     </Row>
-    </Col>
+            </Col>
 </section>
     );
 };

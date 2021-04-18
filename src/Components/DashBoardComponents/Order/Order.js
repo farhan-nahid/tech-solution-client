@@ -18,7 +18,7 @@ const Order = () => {
   const [loggedInUser, setLoggedInUser] = useContext(UserContext)
 
     useEffect(()=>{
-        const url= `https://tech-solution-farhan.herokuapp.com/services/${id}`
+        const url= ` https://tech-solution-farhan.herokuapp.com/services/${id}`
         fetch(url)
         .then(res => res.json())
         .then(data => setOrderCheckout(data))
@@ -29,7 +29,8 @@ const Order = () => {
     };
 
     const handleSuccess = (paymentId) => {
-        const newOrder = {...loggedInUser, ...order, paymentId}
+        const newOrder = {...loggedInUser, ...order, paymentId,status: 'pending'}
+        
         delete newOrder._id
         delete newOrder.image
         console.log(newOrder);

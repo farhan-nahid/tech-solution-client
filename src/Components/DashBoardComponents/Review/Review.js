@@ -11,19 +11,16 @@ const Review = () => {
 
     
     const onSubmit = (data, e) => {
-        const review = {
-           name:data.name,
-           companyName:data.companyName,
-           description:data.description,
-
-        }
+       
+        const testimonial= {...data, ...loggedInUser}
+      
         const url='https://tech-solution-farhan.herokuapp.com/addReview'
         fetch(url,{
         method: 'POST',
         headers:{
             'Content-Type':'Application/json'
         },
-             body:JSON.stringify(review)
+             body:JSON.stringify(testimonial)
         })
         .then(res=>console.log("server site", res))
         window.alert("review added")
