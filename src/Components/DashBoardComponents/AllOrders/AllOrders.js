@@ -1,7 +1,6 @@
 import React, { useEffect, useState } from 'react';
 import { Col, Row } from 'react-bootstrap';
 import spinner from '../../../img/loader.gif';
-import AdminSingleOrder from '../AdminSingleOrder/AdminSingleOrder';
 import SideBar from '../SideBar/SideBar';
 
 const AllOrders = () => {
@@ -27,16 +26,23 @@ useEffect(()=>{
                     <table className="table table-borderless">
                         <thead>
                             <tr>
+                                <th className="text-secondary" scope="col">Sl No</th>
                                 <th className="text-secondary" scope="col">Name</th>
                                 <th className="text-secondary" scope="col">Email Address</th>
                                 <th className="text-secondary" scope="col">Service Name</th>
-                                <th className="text-secondary" scope="col">Price</th>
                                 <th className="text-secondary" scope="col">Action</th>
                             </tr>
                         </thead>
                             {
                                 Orders.length > 0 ?
-                                Orders.map(order => <AdminSingleOrder key={order._id}  order={order}/>)
+                                Orders.map((order, index) =>
+                                   <tr>
+                                       <td>{index + 1}</td>
+                                        <td>{order.userName}</td>
+                                        <td>{order.email}</td>
+                                        <td>{order.service}</td>
+                                        <td> pending</td>
+                                 </tr>  )
                                 :
                                 <img style={{width:'30%'}} className="text-center m-auto" src={spinner} alt="..."/>  
                             }

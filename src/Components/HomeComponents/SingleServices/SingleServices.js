@@ -15,9 +15,9 @@ const SingleServices = ({service}) => {
         <Col md={4} className="p-2">
             <Card className="text-center p-4 card ">
             {
-            service.image ? <img className="doctor-img"  src={`data:image/png;base64,${service.image.img}`}/>
+            service.image ? <img  src={`data:image/png;base64,${service.image.img}`}/>
             :
-            <img  className="img-fluid mb-3 doctor-img" src={`https://tech-solution-farhan.herokuapp.com/${service.img}`} alt=""/>
+            <img  className="img-fluid mb-3" src={`https://tech-solution-farhan.herokuapp.com/${service.img}`} alt=""/>
         }
                 <h5 className="mt-3 name">{name}</h5>
                 <p  className="text-muted">{textArea}</p>

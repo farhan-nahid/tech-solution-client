@@ -76,7 +76,7 @@ const NavBar = () => {
                           <Popover.Content>
                             <h6>{name}</h6>
                             <p>{email}</p>
-                            <Button variant="info"  onClick={handelSignOut}> Log Out</Button>
+                            <Button variant="danger" className="btn-brand" onClick={handelSignOut}> Log Out</Button>
                           </Popover.Content>
                         </Popover>
                       </Overlay>

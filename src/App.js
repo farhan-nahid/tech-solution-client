@@ -8,6 +8,7 @@ import AddAdmin from "./Components/DashBoardComponents/AddAdmin/AddAdmin";
 import AddServices from "./Components/DashBoardComponents/AddServices/AddServices";
 import AllOrders from "./Components/DashBoardComponents/AllOrders/AllOrders";
 import DashBoard from "./Components/DashBoardComponents/DashBoard/DashBoard";
+import ManageServices from "./Components/DashBoardComponents/ManageServices/ManageServices";
 import Order from "./Components/DashBoardComponents/Order/Order";
 import Review from "./Components/DashBoardComponents/Review/Review";
 import UserShowOrder from "./Components/DashBoardComponents/UserShowOrder/UserShowOrder";
@@ -51,6 +52,9 @@ function App() {
           </PrivateRoute>
           <PrivateRoute path="/dashboard/review">
             <Review />
+          </PrivateRoute>
+          <PrivateRoute path="/dashboard/manageServices">
+            <ManageServices />
           </PrivateRoute>
           <Route exact path="/">
           <Home />
