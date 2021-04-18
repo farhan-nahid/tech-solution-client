@@ -1,10 +1,6 @@
 .skill-card {
+  box-shadow: 0px 2px 5px rgb(0 0 0 / 20%);
   border-radius: 10px;
-  border: 1px solid lightblue;
-}
-
-.skill-card:hover {
-  border: 1px solid rgb(3, 76, 100);
 }
 
 .icon {

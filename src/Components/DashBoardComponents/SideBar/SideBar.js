@@ -44,7 +44,10 @@ const SideBar = () => {
                 <img className="img-fluid" src={title} alt="..."/>
             </Link>
         <ul className="list-unstyled">
-                    <li>
+        
+                {
+                    !isAdmin ? <div>
+                  <li>
                         <Link to="/dashboard/order/:id" className="text-white">
                             <FontAwesomeIcon icon={faShoppingCart} /> <span>Order</span> 
                         </Link>
@@ -59,32 +62,33 @@ const SideBar = () => {
                             <FontAwesomeIcon icon={faShoppingBag} /> <span>Order List</span>
                         </Link>
                     </li>
-          {  isAdmin &&  
-
-            <div>
-                    <li>
-                            <Link to="/dashboard/addServices" className="text-white" >
-                                <FontAwesomeIcon icon={faPlus} /> <span>Add Services</span>
-                            </Link>
-                    </li>
-                    <li>
-                            <Link to="/dashboard/addAdmin" className="text-white" >
-                                <FontAwesomeIcon icon={faUserPlus} /> <span>Add Admin</span>
-                            </Link>
-                    </li>
-                    <li>
-                        <Link to="/dashboard/allOrders" className="text-white">
-                            <FontAwesomeIcon icon={faShoppingBag} /> <span>Orders List</span>
-                        </Link>
-                    </li> 
-                    <li>
-                        <Link to="/dashboard/manageServices" className="text-white" >
-                        <FontAwesomeIcon icon={faThLarge} /> <span>Manage Services</span>
-                        </Link>
-                    </li>
-                </div>
+                  </div>
+                  : 
+                    <div>
+                            <li>
+                                    <Link to="/dashboard/addServices" className="text-white" >
+                                        <FontAwesomeIcon icon={faPlus} /> <span>Add Services</span>
+                                    </Link>
+                            </li>
+                            <li>
+                                    <Link to="/dashboard/addAdmin" className="text-white" >
+                                        <FontAwesomeIcon icon={faUserPlus} /> <span>Add Admin</span>
+                                    </Link>
+                            </li>
+                            <li>
+                                <Link to="/dashboard/allOrders" className="text-white">
+                                    <FontAwesomeIcon icon={faShoppingBag} /> <span>Orders List</span>
+                                </Link>
+                            </li> 
+                            <li>
+                                <Link to="/dashboard/manageServices" className="text-white" >
+                                <FontAwesomeIcon icon={faThLarge} /> <span>Manage Services</span>
+                                </Link>
+                            </li>
+                        </div>
+                }
             
-        }         
+                
                 <li>
                     <Link onClick={handelSignOut} className="text-white"><FontAwesomeIcon icon={faSignOutAlt} /> <span>Logout</span></Link>
                 </li>

@@ -13,8 +13,9 @@ const Review = () => {
     const onSubmit = (data, e) => {
        
         const testimonial= {...data, ...loggedInUser}
+        console.log(testimonial)
       
-        const url='https://tech-solution-farhan.herokuapp.com/addReview'
+        const url=' https://tech-solution-farhan.herokuapp.com/addReview'
         fetch(url,{
         method: 'POST',
         headers:{
@@ -23,7 +24,7 @@ const Review = () => {
              body:JSON.stringify(testimonial)
         })
         .then(res=>console.log("server site", res))
-        window.alert("review added")
+        window.alert("review added") 
     };
 
     return (

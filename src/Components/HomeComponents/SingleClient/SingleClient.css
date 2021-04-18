@@ -1,0 +1,10 @@
+.img .user-img {
+  height: 60px;
+  width: 60px;
+  border-radius: 50%;
+}
+
+.review {
+  box-shadow: 0px 2px 5px rgb(0 0 0 / 20%);
+  border-radius: 10px;
+}
