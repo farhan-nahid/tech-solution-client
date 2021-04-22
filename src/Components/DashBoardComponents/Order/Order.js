@@ -29,7 +29,7 @@ const Order = () => {
     };
 
     const handleSuccess = (paymentId) => {
-        const newOrder = {...loggedInUser, ...order, paymentId,status: 'pending'}
+        const newOrder = {...loggedInUser, ...order,...orderCheckout, paymentId,status: 'pending'}
         
         delete newOrder._id
         delete newOrder.image
@@ -56,24 +56,20 @@ const Order = () => {
             </Col>
              <Col md={10} className=" bg-light" style={{ position: "absolute", left: 240,display: order ? 'none' : 'block'  }}>
                     <div className="d-flex justify-content-between p-5 name" >
-                        <h3>Orders</h3>
+                        <h4>Service Name : {orderCheckout.name}</h4>
                         <h5>{loggedInUser.name}</h5>
                     </div>
                     <form onSubmit={handleSubmit(onSubmit)}>
                         
-                         <label htmlFor="" >Your Name</label> <br/>
+                         <label>Your Name</label> <br/>
                         <input {...register("userName", { required: true })} value={loggedInUser.name} Placeholder="Enter Your Name" className="form-control"  />  <br/>
                         {errors.userName && <span className>This field is required</span>} 
 
-                        <label htmlFor="" >Your Email</label> <br/>
+                        <label >Your Email</label> <br/>
                         <input {...register("email", { required: true })}  value={loggedInUser.email} className="form-control" /> <br/>
                         {errors.email && <span className="text-danger">This field is required</span>} 
 
-                        <label htmlFor="" >Your Service Name</label> <br/>
-                        <input {...register("service", { required: true })} className="form-control" placeholder="Enter Service Name"  /> <br/>
-                        {errors.service && <span className="text-danger">Enter Service Name</span>} 
-
-                        <label htmlFor="" >Your Location </label> <br/>
+                        <label>Your Location </label> <br/>
                         <input {...register("location", { required: true })} className="form-control" placeholder="Enter Your Location"  /> <br/>
                         {errors.location && <span className="text-danger">Enter Your Location</span>}
                         
